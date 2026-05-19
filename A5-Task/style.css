@@ -1,0 +1,882 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html{
+    font-size: clamp(14px, 0.8vw + 0.8vh, 18px);
+
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    background-color: #fff;
+}
+main{
+  height: 100%;
+  width: 100%;
+    padding:3rem;
+}
+
+.Page1-Section{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav .left .logo img{
+    height: 1.5rem;
+}
+
+nav .left .hiring{
+    background-color:#EDDED5;
+    padding: 0.5rem 1rem;
+    font-family: sans-serif;
+    font-weight: 300;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
+
+nav .right{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+nav .right a,.pagesBoxContainer .box a{
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+}
+
+nav .right a::after,.pagesBoxContainer .box a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    background-color: #000;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav .right a:hover::after,.pagesBoxContainer .box a:hover::after{
+    width: 100%;
+}
+
+nav .right button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+nav .right button:hover{
+    background-color:black;
+    color: #fff;
+}
+
+.pagesBoxContainer .box button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+.pagesBoxContainer .box button:hover{
+    background-color:black;
+    color: #fff;
+}
+
+.textSection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.textSection .textBox{
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.textSection .textBox h1{
+    font-size: 6.25rem;
+    font-weight: 600;
+    line-height: 6.25rem;
+}  
+
+.textSection .textBox p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    width: 45%;
+}
+
+.textSection .textBox button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: black;
+    color: #fff;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+.textSection .textBox button:hover{
+    background-color:#fff;
+    color:black;
+}
+
+.Page2-Section{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.scroll-container{
+   width: 100%;
+   overflow: hidden;
+   /* background-color:red; */
+}
+
+.slider{
+   width: 200%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 4rem;
+   overflow: hidden;
+   /* background-color: blue; */
+}
+
+.slideLogos{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    animation: infiniteScroll 18s linear infinite;
+}
+
+.slider img{
+    height: 3rem;
+    width: auto;
+}
+
+
+@keyframes infiniteScroll{
+
+    from{
+        transform: translateX(0)
+    }
+
+    to{
+      transform: translateX(-50%)
+    }
+
+}
+
+.summeryBoxContainer {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    gap: 3rem;
+}
+
+.summeryBox{
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #F4F4F5;
+}
+
+.ourWork{
+    width: 100%;
+    padding-block: 1rem;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 2rem;
+}
+
+.selectedWork{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectedWork h2{
+    font-size: 3rem;
+}
+
+.selectedWork button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+.selectedWork button:hover{
+    background-color:black;
+    color: #fff;
+}
+
+.Page3-Section{
+    height: fit-content;
+    width: 100%;
+    min-height: 100vh;   
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cardBox{
+    height: 70%;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* background-color: blue; */
+}
+
+.cardBox .imgBox{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+
+.cardBox .imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: red;
+    transition: transform 0.3s ease;
+
+}
+.cardBox .imgBox img:hover{
+    transform: scale(1.1);
+}
+
+.cardBox .text{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardBox .text h3{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cardBox .text button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 0.6rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+.cardBox .text button:hover{
+    background-color:black;
+    color: #fff;
+}   
+
+.Page4-Section{
+    width: 100%;
+    height:100vh;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ourValue{  
+    width: 100%;
+    padding-block: 1rem;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 2rem;
+}
+
+.ServiceCardsBox{
+    flex: 1;
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+}
+
+.ServiceCardsBox .leftAlligned{
+    height: 48%;
+    width: 75%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.ServiceCardsBox .leftAlligned .AboutOliv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ServiceCardsBox .leftAlligned .AboutOliv p{
+    font-size: 0.8rem;
+    font-weight: 450;
+}
+
+.ServiceCardsBox .leftAlligned .AboutOliv h3{
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+.ServiceCardsBox .leftAlligned .AboutOliv button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+.ServiceCardsBox .leftAlligned .AboutOliv button:hover{
+    background-color:black;
+    color: #fff;
+}
+
+.ServiceCardsBox .rightAlligned{
+    box-sizing: border-box;
+    height: 48%;
+    width: 75%;
+    position: absolute;
+    right: -13px;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+}
+
+
+.ServiceCardsBox .card {
+    height: 100%;
+    width: 33%;   
+    padding: 2rem;
+}
+
+.card .text{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card .text p{
+    font-size: 0.8rem;
+    font-weight: 450;
+}
+
+.card .text h4{
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+.Page5-Section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Page5-Section .TextDecp{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Page5-Section .TextDecp h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.Page5-Section .TextDecp .pText{
+    display: flex;
+    gap: 1rem;
+}
+
+.Page6-Section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ourTeam{  
+    width: 100%;
+    padding-block: 1rem;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 2rem;
+}
+
+
+.ourTeamExperts{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ourTeamExperts h2{
+    font-size: 3rem;
+}
+
+.ourTeamExperts button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+
+.ourTeamExperts button:hover{
+    background-color:black;
+    color: #fff;
+}
+
+.TeamInfoBox{
+    flex: 1;
+    padding-block: 3.5rem;
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+}
+
+.TeamInfoBox .infoBox{
+    height: 100%;
+    width: 22%;
+    background-color: #F4F4F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 3rem 2rem;
+}
+.TeamInfoBox .infoBox .top{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 1rem;
+}
+.TeamInfoBox .infoBox h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.TeamInfoBox .infoBox p{
+    font-size: 0.8rem;
+    font-weight: 450;
+}
+
+.TeamInfoBox .infoBox span{
+    font-size: 0.8rem;
+    font-weight: 450;
+}
+
+.TeamInfoBox .infoBox button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}    
+
+.TeamInfoBox .infoBox button:hover{
+    background-color:#fff;
+    color: #000;
+}
+
+.TeamInfoBox .UserinfoBox{
+    height: 100%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.TeamInfoBox .UserinfoBox .imgBox{
+    width: 100%;
+    height: 85%;
+    position: relative;
+    background-color: blue;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+.TeamInfoBox .UserinfoBox .imgBox img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.TeamInfoBox .UserinfoBox .socialLinks{
+   position: absolute;
+   overflow: hidden;
+    display: flex;
+    z-index: 10;
+    gap: 1.5rem;
+    bottom: -4rem;
+    right: 3.5rem;
+    transition: all 0.7s ease;
+}
+
+.TeamInfoBox .UserinfoBox:hover .socialLinks{
+    bottom: 2rem;
+}
+
+.TeamInfoBox .UserinfoBox .socialLinks i{
+    font-size: 1.25rem;
+    color: #fff;
+}
+.TeamInfoBox .UserinfoBox .socialLinks div{
+   height: auto;
+   width: auto;
+   padding: 0.5rem;
+   border-radius: 50%;
+   background-color: black;
+   color: #fff;
+}
+.TeamInfoBox .UserinfoBox .socialLinks i:hover{
+    color:#d6d6d6;
+}
+
+.TeamInfoBox .UserinfoBox .bottom {
+    flex: 1;
+    display: flex;
+    padding-inline: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.TeamInfoBox .UserinfoBox .bottom h4{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.TeamInfoBox .UserinfoBox .bottom button{
+    padding:0.3rem 0.6rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 0.7rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+.TeamInfoBox .UserinfoBox .bottom button:hover{
+    background-color:black;
+    color: #fff;
+}
+
+.Page7-Section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.Page7-Section .box{
+    padding: 2em;
+    height: 50%;
+    width: 70%;
+}
+.Page7-Section .box {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.Page7-Section .box .right{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.Page7-Section .box .right h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.Page7-Section .top{
+    border-bottom: 1px solid #F1F1F2;
+}
+
+.Page8-Scection{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.Page8-Scection .contactinfo{
+    font-size: 16px;
+    background-color: #F1F6F5;
+    height: 80% ;
+    width: 100%;
+    padding: 4rem;
+}
+
+.Page8-Scection .contactinfo{
+    display: flex;
+    align-items: flex-start;
+    gap: 13rem;
+}
+
+.Page8-Scection .contactinfo .left{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.Page8-Scection .contactinfo .right{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+.Page8-Scection .contactinfo .right h3{
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+
+.Page8-Scection .contactinfo .right p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    width: 45%;
+}
+.Page8-Scection .contactinfo .right button{
+    padding:0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    transition:color 0.3s ease;
+    transition:background-color 0.7s ease;
+}
+.Page8-Scection .contactinfo .right button:hover{
+    background-color:#000;
+    color:#fff;
+}
+
+.Page9-Section{
+   min-height: 100vh;
+    width: 100%;
+}
+
+.Page9-Section .productsBox{
+    width: 100%;
+    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Page9-Section .productsBox .product{
+    height: 40%;
+    width:20%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.Page9-Section .productsBox .product .imgBox{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.Page9-Section .productsBox .product .imgBox img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.Page9-Section .productsBox .product .imgBox img:hover{
+    transform: scale(1.1);
+}
+
+.pagesBoxContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.pagesBoxContainer .box{
+      height: 400px;
+      width: 300px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 1rem;
+      /* background-color: red; */
+}
+
+.pagesBoxContainer .logobox .logos{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.pagesBoxContainer .logobox .logos div{
+    height: auto;
+    width: auto;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: black;
+    color: #fff;
+}
+
+.pagesBoxContainer .logobox .logos div i{
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.pagesBoxContainer .box p{
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-block: 0.25rem;
+    width: 100%;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    border-top: #bfbaba64 solid 1px;
+}
+
+footer .left p{
+    font-size: 0.8rem;
+    font-weight: 450;
+}
+
+footer .right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .right p{
+    font-size: 0.8rem;
+    font-weight: 450;
+    margin-left: 1rem;
+}   
+
+@media screen and (max-width: 1300px) {
+    html{
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 1200px) {
+    html{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 1100px) {
+    html{
+        font-size: 0.7rem;
+    }
+}
+@media screen and (max-width: 1000px) {
+    html{
+        font-size: 0.6rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    html{
+        font-size: 0.5rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    html{
+        font-size: 0.6rem;
+    }
+}
+
+
+
+
+
+
