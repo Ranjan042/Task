@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <div class="form-overlay">
+            <form action="#">
+                <i class="ri-close-line"></i>
+                <input type="text" placeholder="Enter Title" required>
+                
+                <label for="category">Choose Category</label>
+                
+                <select id="category" name="category">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="study">Study</option>
+                    <option value="shopping">Shopping</option>
+                </select>
+                
+                <label for="priority">Choose Priority</label>
+
+                <select id="priority" name="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+
+                <button type="submit">Add Task</button>
+
+            </form>
+        </div>
+
+        <nav>
+            <div class="left">Task Manager</div>
+            <div class="right">
+                <button class="addTask">Add Task</button>
+                <div class="themeButton">
+                    <i class="ri-sun-line"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="filterDiv">
+               <label for="filterCategory">Category</label>
+
+        <select id="filterCategory" name="filterCategory">
+            <option value="all">All</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="study">Study</option>
+            <option value="shopping">Shopping</option>
+        </select>
+        </div>
+
+    
+
+        <div class="Task-container">
+            
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

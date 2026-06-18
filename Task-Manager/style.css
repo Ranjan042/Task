@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root[data-theme="light"] {
+  --bgColor: #FFFFFF;
+
+  --surface: #F5F5F5;
+  --surface-hover: #E5E5E5;
+
+  --primary: #000000;
+  --primary-hover: #222222;
+
+  --text: #000000;
+  --text-secondary: #666666;
+
+  --border: #D4D4D4;
+
+  --success: #000000;
+  --warning: #555555;
+  --danger: red;
+
+
+  --shadow: rgba(0, 0, 0, 0.12);
+
+  --invert: black;
+
+ --pending: #F59E0B;      /* Orange */
+  --completed: #22C55E;    /* Green */
+  --cancelled: #EF4444;    /* Red */
+  --in-progress: #3B82F6;  /* Blue */  
+
+  --priority-high: #EF4444;    /* Red */
+  --priority-medium: #F59E0B;  /* Orange */
+  --priority-low: #22C55E; 
+}
+
+:root[data-theme="dark"] {
+  --bgColor: #000000;
+
+  --surface: #111111;
+  --surface-hover: #1F1F1F;
+
+  --primary: #FFFFFF;
+  --primary-hover: #E5E5E5;
+
+  --text: #FFFFFF;
+  --text-secondary: #A3A3A3;
+
+  --border: #333333;
+
+  --success: #FFFFFF;
+  --warning: #BFBFBF;
+  --danger: red;
+
+  --shadow: rgba(255, 255, 255, 0.08);
+
+  --invert: white;
+
+   --pending: #FBBF24;      /* Brighter Orange */
+  --completed: #4ADE80;    /* Brighter Green */
+  --cancelled: #F87171;    /* Brighter Red */
+  --in-progress: #60A5FA; 
+
+    --priority-high: #F87171;    /* Lighter Red */
+  --priority-medium: #FBBF24;  /* Lighter Orange */
+  --priority-low: #4ADE80;     /* Lighter Green */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--bgColor);
+    color: var(--text);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+nav .left{
+    font-size: clamp(1rem,1vw,1rem);
+    font-weight: 500;
+    color: var(--text);
+}
+
+nav .right{
+    display: flex;
+    gap:clamp(0.8rem,2vw,2rem);
+    align-items: center;
+    color: var(--text);
+}
+
+nav .right button{
+    background-color: transparent;
+    color: var(--text);
+    border: none;
+    font-weight: 400;
+    font-size: clamp(0.8rem,1vw,1.5rem);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+nav .right button::after{
+    height: 2px;
+    width: 0;
+    content: '';
+    display: block;
+    background-color:var(--text);
+    transition: width 0.3s ease-in-out;
+}
+
+nav .right button:hover::after{
+    width: 100%;
+}
+
+nav .right .themeButton{
+    font-size: clamp(1rem,2vw,1rem);
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+nav .right .themeButton i{
+    font-size: clamp(1rem,2vw,1rem);
+
+}
+
+.form-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.695);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    display: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--surface);
+    box-shadow: 0 0 10px var(--shadow);
+    width: clamp(300px, 40%, 500px);
+    color: var(--text);
+    position: relative;
+}
+
+.active{
+    display: flex;
+}
+
+form input{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: clamp(0.8rem,1vw,1rem);
+    font-weight: 500;
+}
+
+form button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--bgColor);
+    font-size: clamp(0.8rem,1vw,1rem);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: var(--primary-hover);
+}
+
+form label{
+    font-size: clamp(0.8rem,1vw,1rem);
+    font-weight: 500;
+}
+
+form select{
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: clamp(0.8rem,1vw,1rem);
+    font-weight: 500;
+}
+
+form select option{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: clamp(0.8rem,1vw,1rem);
+    font-weight: 500;
+}
+
+form .ri-close-line{
+    display: flex;
+    justify-content: flex-end;
+    font-size: clamp(1rem,2vw,1rem);
+    cursor: pointer;
+}
+
+form .ri-close-line:hover{
+    color: var(--danger);
+}
+
+.filterDiv{
+    width: 100%;
+    height: 5%;
+    background-color: var(--surface);
+    box-shadow: 0 0 10px var(--shadow);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+    font-weight: 500;
+    color: var(--text);
+    padding: 10px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+.Task-container{
+    width: 100%;
+    min-height: 90%;
+    background-color: var(--surface);
+    display: flex;
+    align-items: flex-start;
+    gap: calc(0.5rem,2vw,1rem);
+    flex-wrap: wrap;
+}
+
+
+.task{
+    display: flex;
+    flex-direction: column;
+    gap:clamp(0.5rem,0.8vw,0.5rem);
+    background-color:var(--bgColor);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow);
+    width: clamp(300px, 30%, 500px);
+    color: var(--text);
+    position: relative;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.task:hover{
+    transform: scale(1.05);
+}
+
+.task .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+    font-weight: 500;
+}
+
+.top .markasdone i{
+    font-size: clamp(1rem,2vw,1rem);
+    cursor: pointer;
+}
+
+.task .data-info{
+    display: flex;
+    gap: clamp(5px,2vw,10px);
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+    font-weight: 500;
+}
+
+.task .data-info span{
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+}
+
+.task .data-info .data-category{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--invert);
+    color: var(--bgColor);
+}
+
+.task .data-info .data-status-pending{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--pending);
+    color: var(--bgColor);
+}
+
+.task .data-info .data-status-completed{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--completed);
+    color: var(--bgColor);
+}
+
+.task .data-info .data-priority-high{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--priority-high);
+    color: var(--bgColor);
+}
+
+.task .data-info .data-priority-medium{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--priority-medium);
+    color: var(--bgColor);
+}
+
+.task .data-info .data-priority-low{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--priority-low);
+    color: var(--bgColor);
+}
+
+.task .data-title{
+    font-size: clamp(1rem,1.5vw,1rem);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.task .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+    font-weight: 500;
+    color: var(--text);
+}
+
+.task .bottom .date{
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.5rem,0.6vw,0.8rem);
+    font-weight: 500;
+    color: var(--text);
+    gap: 5px;
+}
+
+.task .bottom .modify{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.task .bottom .modify i{
+    font-size: clamp(0.8rem,0.8vw,0.6rem);
+    cursor: pointer;
+}
+
+.task .bottom .modify i:hover{
+    color: var(--danger);
+}
+
+
+
+.completed{
+    color: var(--completed);
+}
