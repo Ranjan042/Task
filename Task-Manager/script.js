@@ -81,6 +81,7 @@ function saveData() {
     localStorage.setItem('task', JSON.stringify(task));
 }
 
+
 function RenderTask() {
     TaskContainer.innerHTML = "";
 
@@ -172,3 +173,70 @@ TaskContainer.addEventListener("click", function (e) {
 RenderTask();
 
 
+const demoBtn = document.querySelector(".demonstration");
+const demoOverlay = document.querySelector(".demonstration-overlay");
+const closeDemo = document.querySelector(".close-demo");
+
+demoBtn.addEventListener("click", () => {
+    demoOverlay.classList.remove("hidden");
+});
+
+closeDemo.addEventListener("click", () => {
+    demoOverlay.classList.add("hidden");
+});
+
+
+// ===================
+// Event Propagation
+// ===================
+
+const grandParent = document.querySelector(".grandparent");
+const parent = document.querySelector(".parent");
+const child = document.querySelector(".child");
+
+grandParent.addEventListener(
+    "click",
+    () => console.log("Grand Parent Capture"),
+    true
+);
+
+parent.addEventListener(
+    "click",
+    () => console.log("Parent Capture"),
+    true
+);
+
+child.addEventListener(
+    "click",
+    () => console.log("Child Capture"),
+    true
+);
+
+grandParent.addEventListener("click", () => {
+    console.log("Grand Parent Bubble");
+});
+
+parent.addEventListener("click", () => {
+    console.log("Parent Bubble");
+});
+
+child.addEventListener("click", () => {
+    console.log("Child Bubble");
+});
+
+
+
+// Event Delegation
+
+
+const taskContainer = document.querySelector(".taskContainer");
+
+taskContainer.addEventListener("click", (e) => {
+
+    console.log("Clicked Element:", e.target);
+
+    if (e.target.classList.contains("taskBtn")) {
+        console.log("Button Clicked:", e.target.innerText);
+    }
+
+});

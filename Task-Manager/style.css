@@ -101,7 +101,7 @@ nav .left{
 
 nav .right{
     display: flex;
-    gap:clamp(0.8rem,2vw,2rem);
+     gap:clamp(0.8rem,1vw,1rem);
     align-items: center;
     color: var(--text);
 }
@@ -410,4 +410,83 @@ form .ri-close-line:hover{
     font-size: clamp(1rem,1.5vw,1rem);
     font-weight: 500;
     color: var(--text);
+}
+
+.demonstration-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.hidden{
+    display:none;
+}
+
+.demo-box{
+    width:min(90%,800px);
+    background:var(--bgColor);
+    color:var(--text);
+
+    padding:2rem;
+    border-radius:1rem;
+    border:1px solid var(--border);
+
+    position:relative;
+}
+
+.close-demo{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+.grandparent{
+    background:var(--priority-high);
+    padding:40px;
+    border-radius:10px;
+    margin:1rem 0;
+}
+
+.parent{
+    background:var(--priority-medium);
+    padding:40px;
+    border-radius:10px;
+}
+
+.child{
+    background:var(--priority-low);
+    padding:40px;
+    border-radius:10px;
+    cursor:pointer;
+    text-align:center;
+    color:black;
+    font-weight:bold;
+}
+
+.taskContainer{
+    display:flex;
+    gap:1rem;
+    margin-top:2rem;
+}
+
+.taskBtn{
+    padding:.8rem 1.5rem;
+    border:none;
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+    cursor:pointer;
+}
+
+.instruction{
+    margin-top:1rem;
+    color:var(--text-secondary);
 }
