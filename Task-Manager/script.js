@@ -86,6 +86,11 @@ function RenderTask() {
 
     const filteredTask= currentCategory === "all" ? task : task.filter(item => item.category === currentCategory);
 
+    if(filteredTask.length===0){
+        TaskContainer.innerHTML = `<div class="no-task">No Task Found</div>`;
+        return;
+    }
+
     filteredTask.forEach((item, index) => {
 
         Task=document.querySelectorAll('.task');
