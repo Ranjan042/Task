@@ -1,9 +1,10 @@
+document.documentElement.setAttribute('data-theme', 'light');
 const themeButton = document.querySelector('.themeButton');
-document.documentElement.setAttribute('data-theme', 'dark');
 const AddTask = document.querySelector('.addTask');
 const closeForm = document.querySelector('.ri-close-line');
 const form = document.querySelector('form');
 const TaskContainer = document.querySelector('.Task-container');
+
 let filterCategory = document.querySelector('#filterCategory');
 let Task;
 let editIndex=null;
