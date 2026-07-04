@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body data-theme="light">
+<body>
     <aside>
         <div class="brandDetails">
             <div class="logo">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="bottom">
-                <button>
+                <button id="addTransactionBtn">
                     <i class="ri-add-line"></i>
                     <p>Add Transaction</p>
                 </button>
@@ -42,16 +42,17 @@
     <main>
         <nav>
             <div class="userInfo">
-                <span class="userName">Ranjan Kumar</span>
+                <span class="userName"></span>
             </div>
             <button>
                 <i class="ri-logout-box-r-line"></i>
-                <p>Logout</p>
+                <p class="logout">Logout</p>
             </button>
         </nav>
 
         <div class="mainContent">
-            <div class="mainHeader">
+            <div id="dashboardView">
+                <div class="mainHeader">
                 <h2>Financial Overview</h2>
                 <p>Real-time tracking application</p>
             </div>
@@ -63,7 +64,7 @@
                     </div>
                     <div class="stat-info">
                         <p>Current Balance</p>
-                        <h3>₹68000.00</h3>
+                        <h3 class="current-balance">₹0000.00</h3>
                     </div>
                 </div>
                 <div class="card">
@@ -72,7 +73,7 @@
                     </div>
                     <div class="stat-info">
                         <p>Total Income</p>
-                        <h3 class="text-green">₹70000.00</h3>
+                        <h3 class="text-green income">₹00000.00</h3>
                     </div>
                 </div>
                 <div class="card">
@@ -81,7 +82,7 @@
                     </div>
                     <div class="stat-info">
                         <p>Total Expense</p>
-                        <h3 class="text-red">₹2000.00</h3>
+                        <h3 class="text-red expense">₹00000.00</h3>
                     </div>
                 </div>
                 <div class="card">
@@ -90,7 +91,7 @@
                     </div>
                     <div class="stat-info">
                         <p>Total Transactions</p>
-                        <h3>3</h3>
+                        <h3 class="transaction-count">0</h3>
                     </div>
                 </div>
             </div>
@@ -113,7 +114,7 @@
                     </div>
                     <button class="reset-btn">
                         <i class="ri-delete-bin-line"></i>
-                        <p>Reset All Data</p>
+                        <p class="reset-data">Reset All Data</p>
                     </button>
                 </div>
             </div>
@@ -123,11 +124,13 @@
                 <div class="transactions-controls">
                     <div class="search-box">
                         <i class="ri-search-line"></i>
-                        <input type="text" placeholder="Search transactions...">
+                        <input type="text" class="search" placeholder="Search transactions...">
                     </div>
                     <div class="filter-box">
-                        <select>
-                            <option>All Types</option>
+                        <select id="transactionTypeFilter">
+                            <option selected value="all">All Types</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
                         </select>
                     </div>
                 </div>
@@ -142,8 +145,8 @@
                                 <th>ACTIONS</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="transactionList">
+                            <!-- <tr>
                                 <td>2026-07-02</td>
                                 <td><b>Salary</b></td>
                                 <td><span class="badge">Salary</span></td>
@@ -172,14 +175,88 @@
                                     <i class="ri-pencil-fill text-blue"></i>
                                     <i class="ri-delete-bin-fill text-red"></i>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
             </div>
+            </div> <!-- End Dashboard View -->
+
+            <!-- Settings View -->
+            <div id="settingsView" style="display: none;">
+                <div class="mainHeader">
+                    <h2>Settings</h2>
+                    <p>Manage your account profile and app formatting.</p>
+                </div>
+                <div class="card profile-details-card">
+                    <h3>Profile Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="name" value="Ranjan Kumar">
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Currency</label>
+                            <select class="currency">
+                                <option value="₹">INR (₹)</option>
+                                <option value="$">USD ($)</option>
+                                <option value="€">EUR (€)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="save-btn profile-save-btn psbutton">Save Changes</button>
+                </div>
+            </div>
+            <!-- End Settings View -->
+
         </div>
         
     </main>
+
+    <!-- Add Transaction Modal -->
+    <div id="transactionModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Transaction</h2>
+                <i class="ri-close-line" id="closeModalBtn"></i>
+            </div>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type">
+                        <option value="Expense">Expense</option>
+                        <option value="Income">Income</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="e.g. Amazon, Salary, Coffee">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" name="amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" value="2026-07-04">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option>Select a category</option>
+                        <option value="Food & Dining">Food & Dining</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Shopping">Shopping</option>
+                    </select>
+                </div>
+                <button type="submit" class="save-btn">Save Transaction</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
