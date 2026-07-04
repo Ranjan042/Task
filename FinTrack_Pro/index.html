@@ -1,89 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinTrack Pro</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
-<body>
-
-        <aside>
-            <div class="brandDetails">
-                <div class="logo">
-                    <i class="ri-stack-fill"></i>
+<body data-theme="light">
+    <aside>
+        <div class="brandDetails">
+            <div class="logo">
+                <i class="ri-stack-fill"></i>
+            </div>
+            <div class="brandName">
+                <h2>FinTrack Pro</h2>
+                <p>Enterprise Finance</p>
+            </div>
+        </div>
+        <div class="PageRouting">
+            <div class="top">
+                <div class="dashboard links makeActive">
+                    <i class="ri-dashboard-fill"></i>
+                    <p>Dashboard</p>
                 </div>
-                <div class="brandName">
-                    <h2>FinTrack Pro</h2>
-                    <p>Enterprise Finance</p>
+                <div class="setting links">
+                    <i class="ri-settings-3-fill"></i>
+                    <p>Settings</p>
                 </div>
             </div>
-            <div class="PageRouting">
-                <div class="top">
-                    <div class="dashboard links makeActive">
-                        <i class="ri-dashboard-fill"></i>
-                        <p>Dashboard</p>
+            <div class="bottom">
+                <button>
+                    <i class="ri-add-line"></i>
+                    <p>Add Transaction</p>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <nav>
+            <div class="userInfo">
+                <span class="userName">Ranjan Kumar</span>
+            </div>
+            <button>
+                <i class="ri-logout-box-r-line"></i>
+                <p>Logout</p>
+            </button>
+        </nav>
+
+        <div class="mainContent">
+            <div class="mainHeader">
+                <h2>Financial Overview</h2>
+                <p>Real-time tracking application</p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="icon-wrapper blue">
+                        <i class="ri-bank-fill"></i>
                     </div>
-                    <div class="setting links">
-                        <i class="ri-settings-3-fill"></i>
-                        <p>Settings</p>
+                    <div class="stat-info">
+                        <p>Current Balance</p>
+                        <h3>₹68000.00</h3>
                     </div>
                 </div>
-                <div class="bottom">
-                    <button>
-                        <i class="ri-add-fill"></i>
-                        <p>Add Transaction</p>
+                <div class="card">
+                    <div class="icon-wrapper green">
+                        <i class="ri-line-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Total Income</p>
+                        <h3 class="text-green">₹70000.00</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon-wrapper red">
+                        <i class="ri-arrow-down-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Total Expense</p>
+                        <h3 class="text-red">₹2000.00</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon-wrapper blue-light">
+                        <i class="ri-safe-2-fill"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Total Transactions</p>
+                        <h3>3</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatAndTheme">
+                <div class="chart-box card">
+                    <h2>Cash Flow Analysis</h2>
+                    <div class="chart-container">
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+                </div>
+                <div class="theme card">
+                    <h2>Preferences</h2>
+                    <div class="themeOptions">
+                        <p>Dark Mode</p>
+                        <label class="switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <button class="reset-btn">
+                        <i class="ri-delete-bin-line"></i>
+                        <p>Reset All Data</p>
                     </button>
                 </div>
             </div>
-            
-        </aside>
 
-        <main>
-            <nav>
-                <button>
-                    <i class="ri-logout-box-r-line"></i>
-                    <p>Logout</p>
-                </button>
-            </nav>
-            <div class="mainContent">
-                <div class="mainHeader">
-                    <h2>Financial Overview</h2>
-                    <p>Real-time tracking application</p>
-                </div>
-                <div class="cards">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                </div>
-
-                <div class="chatAndTheme">
-                    <div class="chart-box card">
-                         <h2>Cash Flow Analysis</h2>
-                          <canvas id="incomeChart"></canvas>
+            <div class="transactionHistory card">
+                <h2>All Transactions</h2>
+                <div class="transactions-controls">
+                    <div class="search-box">
+                        <i class="ri-search-line"></i>
+                        <input type="text" placeholder="Search transactions...">
                     </div>
-                    <div class="theme card">
-                        <h2>Preferences</h2>
-                        <div class="themeOptions">
-                            <p>Dark Mode</p>
-                            
-                        </div>
+                    <div class="filter-box">
+                        <select>
+                            <option>All Types</option>
+                        </select>
                     </div>
                 </div>
-
-                <div class="transactionHistory">
-
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DATE</th>
+                                <th>DESCRIPTION</th>
+                                <th>CATEGORY</th>
+                                <th>AMOUNT</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2026-07-02</td>
+                                <td><b>Salary</b></td>
+                                <td><span class="badge">Salary</span></td>
+                                <td class="text-green fw-bold">+₹20000.00</td>
+                                <td class="actions">
+                                    <i class="ri-pencil-fill text-blue"></i>
+                                    <i class="ri-delete-bin-fill text-red"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2026-07-02</td>
+                                <td><b>Coffee</b></td>
+                                <td><span class="badge">Food & Dining</span></td>
+                                <td class="text-red fw-bold">-₹2000.00</td>
+                                <td class="actions">
+                                    <i class="ri-pencil-fill text-blue"></i>
+                                    <i class="ri-delete-bin-fill text-red"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2026-07-02</td>
+                                <td><b>Salary</b></td>
+                                <td><span class="badge">Food & Dining</span></td>
+                                <td class="text-green fw-bold">+₹50000.00</td>
+                                <td class="actions">
+                                    <i class="ri-pencil-fill text-blue"></i>
+                                    <i class="ri-delete-bin-fill text-red"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-                
-        </main>
-
+        </div>
+        
+    </main>
     <script src="script.js"></script>
 </body>
-
 </html>
