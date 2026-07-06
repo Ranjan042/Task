@@ -1,0 +1,593 @@
+@font-face {
+    font-family: "Reckless";
+    src: url("./fonts/RecklessCondensedS-TRIAL-Book.woff");
+}
+
+@font-face {
+    font-family: "RobotoMono-Regular";
+    src: url("./fonts/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: "RobotoMono-Medium";
+    src: url("./fonts/RobotoMono-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Figtree";
+    src: url("./fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2");
+}
+
+@font-face {
+    font-family: "MidNight-Semibold";
+    src: url("./fonts//midnight-sans-rd-12-semibold-trial.otf");
+}
+
+@font-face {
+    font-family:"Midnight-Medium";
+    src: url("./fonts/midnight-sans-rd-12-medium-trial.otf");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #FBF9EB;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.section-1 {
+    width: 100%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/AlpineBerry.webp?v=1774284236&width=2250.0");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #FBF9EB;
+}
+
+.section-1 .topText {
+    width: 100%;
+    text-align: center;
+    font-family: "RobotoMono-Medium";
+    font-weight: 550;
+    padding-block: 0.2rem;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #2A2857;
+}
+
+.section-1 nav {
+    width: 95%;
+    padding-inline: 1.5rem;
+    padding-block: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFEFB;
+    border: 1px solid #201C1A;
+    border-radius: 0.5rem;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
+nav .left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav .left div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+nav .left div h3 {
+    font-family: "Reckless";
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+nav .left span i {
+    display: none;
+}
+
+nav .right {
+    display: flex;
+    align-items: center;
+    font-family: "RobotoMono-Regular";
+    font-size: 0.8rem;
+    gap: 1rem;
+}
+
+nav .right p {
+    position: relative;
+    display: inline-block;
+}
+
+nav .right p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    transition: width 0.5s ease;
+}
+
+nav .right p:hover::after {
+    width: 100%;
+}
+
+
+
+nav .right .cartboxContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+nav .right .cartboxContainer .cartnumber {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+    right: -0.135rem;
+    padding: 0.30rem;
+    background-color: #FFB500;
+    border-radius: 50%;
+}
+
+.section-1 .text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    bottom: 2rem;
+    left: 2rem;
+    width: 35%;
+    color: #fff;
+}
+
+.section-1 .text h1 {
+    font-family: "Reckless";
+    font-weight: 300;
+    font-size: 5rem;
+}
+
+.section-1 .text p {
+    font-family: "Figtree";
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+.section-1 .text button {
+    font-family: "Figtree";
+    font-weight: 400;
+    font-size: 1.125rem;
+    background-color: black;
+    color: #fff;
+    padding-inline: 3.5rem;
+    padding-block: 1rem;
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.section-1 .text button:hover {
+    color: black;
+    background-color: #fff;
+}
+
+
+.section-2 {
+    width: 100%;
+    height: 150%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    border-bottom: 2px solid black;
+}
+
+.section-2 .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 40%;
+}
+.section-2 h3 {
+    font-family: "Reckless";
+    font-weight: 300;
+   font-size: clamp(2rem,5vw,4rem);
+    padding: 2rem;
+    text-align: center;
+    width: 60%;
+}
+
+.section-2 .bestSeller{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.bestSeller span{
+    font-family: "MidNight-Semibold";
+    font-size: 3.8rem;
+    line-height: 3.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #DAAEEA;
+    border: 1.5px solid black;
+    border-radius: 7px;
+    padding-inline: 5px;
+    rotate: -5deg;
+}
+
+.product-box{
+    width: 100%;
+    /* height:fit-content; */
+    padding-block-start: 6rem;
+    padding-inline: 1rem;
+    display: flex;
+    gap: 2rem;
+     overflow-x: scroll;
+     overflow-y: hidden;
+    padding-bottom: 10rem;
+     
+}
+.product-box::-webkit-scrollbar {
+    display: none;
+}
+
+.product-box .product{
+    /* background-color: red; */
+    
+    flex-shrink: 0;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* position: relative; */
+}
+
+.product-box .product .part-1{
+    position: relative;
+    min-height: 350px;
+    width: 100%;
+    background-color: #C1EE91;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.product-box .product .part-1:hover img{
+    transform: scale(1.1);
+}
+.product-box .product .imgbox{
+    height: 100%;
+    width: 100%;
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product .imgbox img{
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+    object-position: bottom;
+    transition: all 0.3s ease;
+}
+
+.product .part-1 .top{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding-inline: 0.7rem;
+    padding-block: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.product-box .product .part-1 .top p{
+  font-family: "Figtree";
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.product-box .product .top h4{
+    font-size: 1.4rem;
+    line-height: 1.25rem;
+    font-family: "MidNight-Semibold";
+    font-weight: 600;
+    border: 1px solid black;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 0.3rem;
+}
+
+.product-box .product .part-1 .bottom{
+    position: absolute;
+   bottom: 0.8rem;
+   right: 0.8rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 0.5rem;
+   border: 1px solid black;
+   border-radius: 0.2rem;
+   background-color: #fff;
+}
+
+.product-box .product .part-1 .bottom p{
+    font-family: "Figtree";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.product-box .product .part-2{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product .part-2 h2{
+    font-family: "Reckless";
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+}
+
+ .product .part-2 div  p{
+    font-family: "Figtree";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.threeLinebox{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+.threeLinebox .line{
+    width: 4%;
+    height: 2px;
+    background-color: gray;
+}
+.threeLinebox .line1{
+    background-color: black;
+}
+
+.section-2 .button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-2 .button button{
+    /* width: 100%; */
+    padding-inline: 3rem;
+    padding-block: 0.75rem;
+    font-size: 1rem;
+    font-family: "Figtree";
+    font-weight: 400;
+    background-color: #2a2857;
+    border: 1.5px solid black;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: white;
+}
+.section-2 .button button:hover{
+    background-color: #fff;
+    color:black;
+}
+
+.section-3{
+    /* background-color: red; */
+    width: 100%;
+    height: 120%;
+  padding-block: 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+}
+
+.section-3 .top{
+    height: 50%;
+    width: 60%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    gap: 2rem;
+}
+.discover{
+    rotate: -5deg;
+}
+.discover span{
+    font-family: "MidNight-Semibold";
+    font-size: 60px;
+    line-height: 3.60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #DAAEEA;
+    border: 1.5px solid black;
+    border-radius: 7px;
+    padding-inline: 5px;
+}
+.section-3 .top .text h3{
+    font-family: "Reckless";
+    font-weight: 300;
+    font-size: clamp(2rem,5vw,4rem);
+    line-height: 63px;
+}
+
+.section-3 .top input{
+    padding-inline: 1.5rem;
+    padding-block: 0.75rem;
+    width: 50%;
+    font-size: 1rem;
+    font-family: "Figtree";
+    font-weight: 400;
+    /* background-color: #2a2857; */
+    /* border: 1.5px solid black; */
+    background-color: transparent;
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: white;
+}
+.section-3 .top input:hover{
+    background-color: #fff;
+    color:black;
+}
+.section-3 .bottom{
+    height: 50%;
+    width: 60%;
+    /* background-color: red; */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    gap: 2rem;
+}
+.section-3 .bottom .text h3{
+    font-family: "Reckless";
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 63px;
+}
+.section-3 .bottom .buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.section-3 .bottom .buttons button{
+    /* width: 100%; */
+    padding-inline: 1.5rem;
+    padding-block: 0.75rem;
+    font-size: 32px;
+    line-height: 18px;
+    font-family: "Reckless";
+    font-weight: 400;
+    background-color: #DAEAFF;
+    border: 1.5px solid black;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: black;
+}
+.section-3 .bottom .buttons button:hover{
+    background-color: #82b2f1;
+    color:black;    
+}
+@media (max-width: 1024px) {
+    nav .left div {
+        display: none;
+    }
+
+    nav .left span i {
+        display: block;
+    }
+
+    nav .right p {
+        display: none;
+    }
+
+    .section-1 .text {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-1 .text h1 {
+        font-size: 3.5rem;
+        font-weight: 400;
+    }
+
+    .section-1 .text p {
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+
+    .section-1 .text button {
+        width: 100%;
+        padding-inline: 2.5rem;
+        padding-block: 0.75rem;
+        font-size: 1rem;
+    }
+
+
+    .section-3 .top{
+        width: 90%;
+    }
+    .section-3 .bottom{
+        width: 90%;
+    }
+    .section-3 .top input{
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-1 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        background-image: url('https://www.twoleavestea.com/cdn/shop/files/AlpineBerry_mobile.webp?v=1774284087&width=1280');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .section-3{
+         height:160%;
+    }
+}

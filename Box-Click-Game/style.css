@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.game-board{
+    height: 70vh;
+    width: 22vw;
+    border: 4px solid rgba(211, 152, 152, 0.696);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #ccadad;
+}
+
+.score-area{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-area{
+    flex: 1;
+    background-color: black;
+    border-radius: inherit;
+    position: relative;
+}
+
+.play-area .box{
+    height: 10%;
+    width: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    background-color: red;
+    position: absolute;
+    border-radius: 0.5rem;
+
+}
+
+.controls{
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.controls button{
+    padding: 0.5rem 1rem;
+    background-color: rgb(148, 68, 68);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+.score-area span{
+    font-size: 1rem;
+    margin: 0 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.gameOverPage{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.852);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    z-index: 1;
+    display: none;
+}
+
+.gameOverPage h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
