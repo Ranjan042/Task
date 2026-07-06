@@ -5,6 +5,23 @@ let fullpages = document.querySelector('.fullpages')
 let fullpage = document.querySelectorAll(".fullpage")
 let closebtn = document.querySelectorAll(".clsbtn");
 
+// Theme switching logic
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themes = ['theme1', 'theme2', 'theme3', 'theme4', 'theme5', 'theme6', 'theme7'];
+let currentThemeIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
+
+// Initialize theme
+document.documentElement.setAttribute('data-theme', themes[currentThemeIndex]);
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        let newTheme = themes[currentThemeIndex];
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('themeIndex', currentThemeIndex);
+    });
+}
+
 const Functions = [ToDo, DailyPlanner, Motivation, PomodoroTimer, DailyGoal]
 
 elem.forEach((elem) => {
@@ -309,6 +326,7 @@ async function FetchWheatherData() {
     let tempdiv = document.querySelector(".temp");
     let citydiv = document.querySelector(".city");
     let icondiv = document.querySelector(".icon");
+    icondiv.innerHTML = "";
 
     let img = document.createElement("img");
     let span = document.createElement("span");
