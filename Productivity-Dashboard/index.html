@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <nav style="color: beige;">
+            <h3>Productivity Dashboard</h3>
+            <button>Change Theme</button>
+        </nav>
+
+        <section class="dashboardWrapper">
+            <div class="dashboard">
+                <div class="timeDate">
+                    <div class="date">
+
+                    </div>
+                    <div class="time">
+
+                    </div>
+                    <div class="city">
+
+                    </div>
+                </div>
+                <div class="wheather">
+                    <div class="tempBox">
+                        <div class="temp">
+
+                        </div>
+                        <div class="icon">
+
+                        </div>
+                    </div>
+
+                    <div class="description">
+                        <div class="possibility"></div>
+                        <div class="humidity"></div>
+                        <div class="wind"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="allelm">
+            <div class="elem" id="0">
+                <img src="https://i.pinimg.com/1200x/8e/29/39/8e29390fbb279953ee370c3a00ee576e.jpg" alt="">
+                <span>To Do list</span>
+            </div>
+            <div class="elem" id="1">
+                <img src="https://images.unsplash.com/photo-1634334339429-660e1b088026?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <span>Daily Planner</span>
+            </div>
+            <div class="elem" id="2">
+                <img src="https://i.pinimg.com/736x/bd/ed/ba/bdedba14bcc7646e0efa1f8991d09ec5.jpg" alt="">
+                <span>Motivation</span>
+            </div>
+            <div class="elem" id="3">
+                <img src="https://i.pinimg.com/736x/52/c3/77/52c377d4ddcc536d539c159e9f71eed4.jpg" alt="">
+                <span>Pormidro timer</span>
+            </div>
+            <div class="elem" id="4">
+                <img src="https://i.pinimg.com/736x/a2/43/e3/a243e348aab9813630fb2b5904fa660d.jpg" alt="">
+                <span>Daily Goals</span>
+            </div>
+
+        </section>
+
+        <section class="fullpages">
+
+            <div class="fullpage todo">
+                <nav>
+                    <h3>To-Do List</h3>
+                    <button class="clsbtn" id="0">Click me</button>
+                </nav>
+                <main>
+                    <div class="left">
+                        <form action="#" class="form">
+                            <input type="text" name="" id="" placeholder="Enter tasks" required>
+                            <textarea name="task-detail" id="" placeholder="Enter task in detail" required></textarea>
+                            <div class="check">
+                                <input type="checkbox" id="important">
+                                <label for="important">Marks as important</label>
+                            </div>
+                            <button>Add Task</button>
+                        </form>
+                    </div>
+                    <div class="right">
+                        <div class="task">
+                            <h4>hii i am title <span>imp</span></h4>
+                            <div>
+                                <button>Mark as Completed</button>
+                                <button>Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div class="fullpage dailyPlanner">
+                <nav>
+                    <h3>Daily-Planner</h3>
+                    <button class="clsbtn" id="1">Click me</button>
+                </nav>
+                <div class="plansdiv">
+
+                </div>
+            </div>
+
+            <div class="fullpage motivation">
+                <nav>
+                    <h3>Motivation</h3>
+                    <button class="clsbtn" id="2">Click me</button>
+                </nav>
+                <div class="motivation-container">
+                    <div class="motivational-qeuotes">
+                        <div class="quoteToday">
+                            Quote of the day
+                        </div>
+                        <div class="quote">
+
+                        </div>
+                        <div class="author">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fullpage Pormidro">
+                <nav>
+                    <h3>Pomodoro Timer</h3>
+                    <button class="clsbtn" id="3">Click me</button>
+                </nav>
+                <div class="timerContainer">
+                    <div class="timer">
+                        <h3 class="status">work Session</h3>
+                        <h2 id="time">25:00</h2>
+                        <div class="controls">
+                            <button class="start">Start</button>
+                            <button class="stop">Stop</button>
+                            <button class="reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="fullpage goals">
+                <nav>
+                    <h3>Daily Goals</h3>
+                    <button class="clsbtn" id="4">Click me</button>
+                </nav>
+                <div class="goals-container">
+                    <div class="goals-input-area">
+                        <input type="text" id="goal-input" placeholder="Enter a new daily goal...">
+                        <button id="add-goal-btn">Add Goal</button>
+                    </div>
+                    <div class="goals-progress">
+                        <span id="goal-progress-text">0 of 0 completed</span>
+                        <button id="clear-completed-goals-btn">Clear Completed</button>
+                    </div>
+                    <ul id="goals-list">
+
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
