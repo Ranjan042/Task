@@ -319,7 +319,7 @@ function DailyGoal() {
 }
 
 async function FetchWheatherData() {
-    const response = await fetch("http://api.weatherapi.com/v1/current.json?key=6ad476d133c94fb6bf550335251012&q=Daltonganj&aqi=no");
+    const response = await fetch("https://api.weatherapi.com/v1/current.json?key=6ad476d133c94fb6bf550335251012&q=Daltonganj&aqi=no");
     const data = await response.json();
     console.log(data);
 
