@@ -343,6 +343,7 @@ main {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     /* align-items: center; */
     gap: 2rem;
 }
