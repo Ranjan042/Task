@@ -3,7 +3,7 @@ import { AppContext } from '../contexts/AppContexts';
 
 const Sidebar = () => {
   const {setfilter,setisFormOpen,setisFavoritopen}= useContext(AppContext);
-  console.log(setisFormOpen);
+  // console.log(setisFormOpen);
   return (
     <aside className="w-64 bg-sidebar flex flex-col h-screen fixed border-r border-orange-100">
       <div className="p-6">
@@ -22,27 +22,27 @@ const Sidebar = () => {
         </div>
 
         <nav className="flex flex-col gap-2">
-          <a onClick={()=>{setfilter("all")}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
+          <a onClick={()=>{setfilter("all");setisFavoritopen(false)}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
             <span className="text-xl">☕</span>
             All
           </a>
-          <a onClick={()=>{setfilter("Breakfast")}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
+          <a onClick={()=>{setfilter("Breakfast");setisFavoritopen(false)}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
             <span className="text-xl">☕</span>
             Breakfast
           </a>
-          <a onClick={()=>{setfilter("Lunch")}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
+          <a onClick={()=>{setfilter("Lunch");setisFavoritopen(false)}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
             <span className="text-xl">🥪</span>
             Lunch
           </a>
-          <a onClick={()=>{setfilter("Dinner")}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
+          <a onClick={()=>{setfilter("Dinner");setisFavoritopen(false)}}  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
             <span className="text-xl">🍝</span>
             Dinner
           </a>
-          <a onClick={()=>{setfilter("Dessert")}} className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
+          <a onClick={()=>{setfilter("Dessert");setisFavoritopen(false)}} className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium">
             <span className="text-xl">🍦</span>
             Desserts
           </a>
-          <a onClick={()=>{setisFavoritopen(true)}} href="#" className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium mt-4">
+          <a onClick={()=>{setisFavoritopen(true)}} className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-white rounded-md transition-colors font-medium mt-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>

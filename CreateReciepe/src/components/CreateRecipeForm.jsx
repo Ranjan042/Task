@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { set, useForm } from 'react-hook-form';
 import {useContext} from 'react';
 import {AppContext} from '../contexts/AppContexts';
 const CreateRecipeForm = () => {
 
-  const {Receipe, setReceipe, SaveReciepeToLocalStorage,isFormOpen, setisFormOpen} = useContext(AppContext);
+  const {Receipe, setReceipe, SaveReciepeToLocalStorage,isFormOpen, setisFormOpen, editingItem} = useContext(AppContext);
 
   const { register, handleSubmit, formState: { errors }, reset} = useForm();
 
@@ -12,7 +12,21 @@ const CreateRecipeForm = () => {
   const [image, setImage] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const availableTags = ['Vegetarian', 'Vegan', 'Gluten-Free', 'Quick & Easy', 'Healthy', 'Spicy', 'Dairy-Free', 'Low Carb'];
-
+  
+  useEffect(() => {
+  if (editingItem) {
+    reset({
+      title: editingItem.title,
+      image: editingItem.image,
+      time: editingItem.time,
+      difficulty: editingItem.difficulty,
+      tags: editingItem.tags,
+      ingredients: editingItem.ingredients,
+      instructions: editingItem.instructions,
+      category: editingItem.category,
+    });
+  }
+}, [editingItem, reset]);
   const toggleTag = (tag) => {
     if (selectedTags.includes(tag)) {
       setSelectedTags(selectedTags.filter(t => t !== tag));
@@ -56,6 +70,27 @@ const CreateRecipeForm = () => {
   };
 
   const HandleSubmit = (data) => {
+     
+    if(editingItem){
+   
+
+      console.log(updatedData);
+      const updatedrecipes = Receipe.map((recipe) => {
+        return recipe.title === editingItem.title ? { ...recipe, ...data } : recipe;
+      })
+   
+      setReceipe(updatedrecipes);
+      SaveReciepeToLocalStorage(updatedrecipes);
+      setisFormOpen(false);
+      return;
+    }
+
+    const isProductExists= Receipe.some((product) => product.title === data.title);
+    if (isProductExists) {
+      alert('Product already exists');
+      return;
+    }
+    
     data.tags = selectedTags;
     data.favorites = false;
     data.image = image;

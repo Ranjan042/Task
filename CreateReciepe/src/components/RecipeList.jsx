@@ -49,25 +49,15 @@ const recipes = [
 
 const RecipeList = () => {
   const { Receipe,filter,isFavoritopen } = useContext(AppContext);
-
-  console.log(Receipe);
-  console.log(filter);
-
-  console.log(" isFavoritopen",isFavoritopen);
-
-  // {isFavoritopen && (
-  //   <div className="flex justify-between items-end mb-6">
-  //       <div>
-  //         <h2 className="text-3xl font-bold font-serif mb-1 text-gray-900">My Favorites</h2>
-  //         <p className="text-gray-500">Your personal collection of curated flavors.</p>
-  //       </div>
-      
-  //     </div>
-  // )}
   
-  const allRecipes = filter === 'all' ? Receipe : Receipe.filter((recipe) => recipe.category === (filter));
+   let allRecipes;
+  {
+    isFavoritopen ?  allRecipes = Receipe.filter((recipe) => recipe.favorites === true):  allRecipes = filter === 'all' ? Receipe : Receipe.filter((recipe) => recipe.category === (filter));
+  }
 
-  console.log(allRecipes);
+ 
+
+  // console.log(allRecipes);
   return (
     <div className="pb-12">
       <div className="flex justify-between items-end mb-6">
@@ -81,21 +71,23 @@ const RecipeList = () => {
      {
         allRecipes.length === 0 && (
           <p className="text-gray-500 text-center">No recipes found.</p>
+        
         )
       }
 
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {allRecipes.map((recipe, index) => (
+          
           <RecipeCard 
             recipe={recipe}
             key={index}
-            title={recipe.title}
-            favorite={recipe.favorites}
-            image={recipe.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'}
-            time={recipe.time ? `${recipe.time} mins` : 'N/A'}
-            difficulty={recipe.difficulty || 'N/A'}
-            tags={recipe.tags || []}
+            // title={recipe.title}
+            // favorite={recipe.favorites}
+            // image={recipe.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'}
+            // time={recipe.time ? `${recipe.time} mins` : 'N/A'}
+            // difficulty={recipe.difficulty || 'N/A'}
+            // tags={recipe.tags || []}
           />
         ))}
       </div>

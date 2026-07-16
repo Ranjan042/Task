@@ -10,11 +10,12 @@ const AppContextProvider = ({ children }) => {
     const [isFormOpen, setisFormOpen] = useState(false);
     const [isFavoritopen, setisFavoritopen] = useState(false);
     const [FavoriteReceipe, setFavoriteReceipe] = useState(LoadFaouriteReceipeFromLocalStorage());
-
-    console.log(Receipe);
+    const [editingItem, seteditingItem] = useState(null)
+    // console.log(Receipe);
 
     function SaveReciepeToLocalStorage(reciepe) {
-        localStorage.setItem('reciepe', JSON.stringify(reciepe));
+        console.log("Savng this in local storage", reciepe);
+        localStorage.setItem('reciepe', JSON.stringify(reciepe || []));
     }
 
     function LoadReciepeFromLocalStorage() {
@@ -33,7 +34,7 @@ const AppContextProvider = ({ children }) => {
 
 
     return (
-        <AppContext.Provider value={{Receipe, setReceipe,filter,setfilter,setisFormOpen,isFormOpen, SaveReciepeToLocalStorage,isFavoritopen, setisFavoritopen,FavoriteReceipe, setFavoriteReceipe, SaveFaouriteReceipeToLocalStorage}}>
+        <AppContext.Provider value={{Receipe, setReceipe,filter,setfilter,setisFormOpen,isFormOpen, SaveReciepeToLocalStorage,isFavoritopen, setisFavoritopen,FavoriteReceipe, setFavoriteReceipe, SaveFaouriteReceipeToLocalStorage,editingItem, seteditingItem}}>
             {children}
         </AppContext.Provider>
     )
