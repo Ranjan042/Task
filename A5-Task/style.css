@@ -132,9 +132,11 @@ nav .right button:hover{
 }
 
 .textSection .textBox h1{
-    font-size: 6.25rem;
+    font-size: clamp(3rem, 7vw, 7rem);
+    
     font-weight: 600;
-    line-height: 6.25rem;
+    line-height: clamp(3rem, 7vw, 7rem);
+    
 }  
 
 .textSection .textBox p{
@@ -228,7 +230,7 @@ nav .right button:hover{
     width: 100%;
     padding-block: 1rem;
     border-bottom: 1px solid #d6d6d6;
-    margin-bottom: 2rem;
+   
 }
 
 .selectedWork{
@@ -844,35 +846,37 @@ footer .right p{
     margin-left: 1rem;
 }   
 
-@media screen and (max-width: 1300px) {
-    html{
-        font-size: 0.9rem;
-    }
+@media screen and (max-width: 1290px) {
+   .Page7-Section .box{
+    padding: 2em;
+    height: 50%;
+    width: 80%;
 }
-@media screen and (max-width: 1200px) {
-    html{
-        font-size: 0.8rem;
-    }
 }
-@media screen and (max-width: 1100px) {
-    html{
-        font-size: 0.7rem;
+
+@media screen and (max-width: 1160px) {
+    .Page7-Section .box{
+        padding: 2em;
+        height: 50%;
+        width: 90%;
     }
+    
 }
-@media screen and (max-width: 1000px) {
-    html{
-        font-size: 0.6rem;
+
+@media  screen and (max-width: 1050px) {
+    .Page7-Section .box{
+        padding: 2em;
+        height: 50%;
+        width: 100%;
     }
+    
 }
+
 @media screen and (max-width: 900px) {
-    html{
-        font-size: 0.5rem;
-    }
-}
-@media screen and (max-width: 800px) {
-    html{
-        font-size: 0.6rem;
-    }
+   .Page1-Section .right{
+    display: none;
+   }
+    
 }
 
 

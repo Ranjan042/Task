@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-syne: "Syne", sans-serif;
+  --font-dmsans: "DM Sans", sans-serif;
+}
+
+/* legacy class aliases */
+.syne {
+  font-family: "Syne",
+}
+
+.dmsans {
+  font-family: "DM Sans", sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: #fff !important;
+  background-color: transparent !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
