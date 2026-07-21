@@ -1,36 +1,46 @@
-import React, { useState } from 'react'
+import React, { use, useState, useEffect } from 'react'
 import { Zap, Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router'
 import { useForm } from 'react-hook-form'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
+
+  const {setuser,RenderNotificationUi} = useContext(CartContext)
   
   const { register, handleSubmit, getValues, formState: { errors }, reset, setError } = useForm();
   const navigate = useNavigate();
 
   const [RegisteredUsers, setRegisteredUsers] = useState(GetUsers());
 
+
   function GetUsers() {
     return JSON.parse(localStorage.getItem("users_sm")) || [];
   }
 
   const HandleSubmit = (data) => {
+
     const user = RegisteredUsers.find((user) => user.email === data.email);
     if (user) {
       if (user.password === data.password) {
         localStorage.setItem("Loguser_sm", JSON.stringify(user));
+        setuser(user);
         navigate("/");
+        RenderNotificationUi("Login Successful")
       } else {
         setError("password", {
           type: "manual",
           message: "Incorrect Password",
         });
+        RenderNotificationUi("Incorrect Password")
       }
     } else {
       setError("email", {
         type: "manual",
         message: "User not found",
       });
+      RenderNotificationUi("User not found")
     }
 
   
